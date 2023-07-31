@@ -1,0 +1,18 @@
+tipo determina o tipo da variavel (int/float/char) a ser exibida
+%i ou %d se refere a int que eh uma vriavel inteira
+%f se refere a float varivel real
+%c se refere a char e variavel caractere
+ex:
+#include <stdio.h>
+
+int main(void) {
+  int idade = 20;
+  float temperatura = 22.3;
+  printf("MEUS DADOS: \n\n");    // \n: pular uma (1) linha
+  printf("Minha idade: %i anos.\n", idade);
+  printf("temperatura do laboratório: %.1f º Celsius.\n", temperatura);
+  return 0;
+}
+
+% demarca o local exato  na tela onde aparece o valor da respectiva variavel
+"" demarca o limite da mensagem
