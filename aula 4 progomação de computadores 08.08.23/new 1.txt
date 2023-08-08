@@ -1,0 +1,80 @@
+aula 4 progomação de computadores 08.08.23
+
+Faça um algoritmo em C que leia:
+    Medidas de um Tanque de combustível - LAP (em metros):
+    Preço por Litros: Álcool e Gasolina.
+e exiba na tela o total a ser pago para encher este tanque de combustível:
+    Somente com gasolina;
+    Somente com Álcool;
+    na proporção: 20% de Álcool e 80% de Gasolina.
+(Sabendo que,  1 𝑚𝑒𝑡𝑟𝑜3 = 1000𝐿𝑖𝑡𝑟𝑜𝑠)
+
+codigo 1:
+#include <stdio.h>
+
+int main() {
+    float tanque_lap, preco_alcool, preco_gasolina;
+    
+    // Leitura das medidas do tanque e preços dos combustíveis
+    printf("Informe as medidas do tanque de combustível (LAP em metros): ");
+    scanf("%f", &tanque_lap);
+    
+    printf("Informe o preço por litro do Álcool: ");
+    scanf("%f", &preco_alcool);
+    
+    printf("Informe o preço por litro da Gasolina: ");
+    scanf("%f", &preco_gasolina);
+    
+    // Conversão de metros cúbicos para litros
+    float tanque_litros = tanque_lap * 1000;
+    
+    // Cálculo do valor a ser pago
+    float valor_gasolina = tanque_litros * preco_gasolina;
+    float valor_alcool = tanque_litros * preco_alcool;
+    
+    // Considerando a proporção 20% Álcool e 80% Gasolina
+    float proporcao_alcool = 0.2;
+    float proporcao_gasolina = 0.8;
+    
+    float valor_proporcao = (proporcao_alcool * valor_alcool) + (proporcao_gasolina * valor_gasolina);
+    
+    // Exibição dos resultados
+    printf("\nTotal a ser pago somente com Gasolina: %.2f\n", valor_gasolina);
+    printf("Total a ser pago somente com Álcool: %.2f\n", valor_alcool);
+    printf("Total a ser pago na proporção 20%% Álcool e 80%% Gasolina: %.2f\n", valor_proporcao);
+    
+    return 0;
+}
+
+ codigo 2 exercicio: Calcular e exibir o volume em litros de uma esfera de Raio (R), sabendo que o usuário deve informar
+o Raio (R) em metros. Sabe-se que: VolumeEsfera = 4
+3
+⁄ * π * R3
+
+e que 1 Litro é igual a 10-3 m3
+.
+
+Declarar o valor de π (PI = 3.14) como constante com o comando: #define.
+
+#include <stdio.h>
+
+#define PI 3.14
+
+int main() {
+    float raio_metros;
+    
+    // Leitura do raio em metros
+    printf("Informe o raio da esfera em metros: ");
+    scanf("%f", &raio_metros);
+    
+    // Cálculo do volume da esfera em metros cúbicos
+    float volume_metros_cubicos = (4.0/3.0) * PI * raio_metros * raio_metros * raio_metros;
+    
+    // Conversão para litros (1 metro cúbico = 1000 litros)
+    float volume_litros = volume_metros_cubicos * 1000.0;
+    
+    // Exibição do resultado
+    printf("O volume da esfera é %.2f litros.\n", volume_litros);
+    
+    return 0;
+}
